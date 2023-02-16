@@ -7,9 +7,9 @@ const getRecipeById = async (req, res, next) => {
   const { idRecipe } = req.params; // Obtiene el ID de la receta del parámetro de la URL
 
 try {
-    const maxRecipes = Math.min(100, req.query.maxRecipes || 100); // Obtiene el parámetro maxRecipes de la consulta (query) y lo limita a 100
+
     const response = await axios.get( // Hace una llamada a la API de Spoonacular con el ID de la receta y el API Key
-    `https://api.spoonacular.com/recipes/${idRecipe}/information?apiKey=${API_KEY}&maxRecipes=${maxRecipes}`
+    `https://api.spoonacular.com/recipes/${idRecipe}/information?apiKey=${API_KEY}&number=100`
     );
 
     const apiRecipe = response.data; // Obtiene los datos de la receta de la API
