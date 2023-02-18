@@ -1,0 +1,54 @@
+.container {
+  background: #FFFFFF;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Agrega esta propiedad para establecer el contenedor como un contexto de apilamiento */
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Agrega esta propiedad para establecer el contenedor como un contexto de apilamiento */
+}
+
+.button {
+  display: inline-block;
+  background-color: #e78e18;
+  color: #f0e9e9;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome {
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.showAnimation {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
