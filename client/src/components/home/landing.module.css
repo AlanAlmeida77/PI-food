@@ -1,54 +1,72 @@
 .container {
-  background: #FFFFFF;
   display: flex;
-  width: 100vw;
-  height: 100vh;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.animationContainer {
+  width: 100%;
+  height: 20%;
+  border-radius: 40px;
+  background-color: rgb(255, 189, 89);
+  display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Agrega esta propiedad para establecer el contenedor como un contexto de apilamiento */
 }
 
-.buttonContainer {
+.animationContent {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  position: relative; /* Agrega esta propiedad para establecer el contenedor como un contexto de apilamiento */
-}
-
-.button {
-  display: inline-block;
-  background-color: #e78e18;
-  color: #f0e9e9;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 40px;
-  cursor: pointer;
-  font-size: 18px;
-  text-align: center;
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
 }
 
 .welcome {
-  position: absolute;
-  top: -50px;
-  left: 10px;
+  font-size: 2rem;
   font-weight: bold;
-  font-size: 24px;
-  z-index: 1;
+  margin: 0 20px;
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
-.showAnimation {
-  animation: fadeIn 2s;
-}
-
-@keyframes fadeIn {
+@keyframes slideIn {
   from {
-    opacity: 0;
+    transform: translateX(-100%);
   }
   to {
-    opacity: 1;
+    transform: translateX(0);
   }
+}
+
+.logoContainer {
+  margin: 20px 0;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid rgb(255, 189, 89);
+  width: 10rem;
+  color: #000;
+  border-radius: 16px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: rgb(255, 189, 89);
+  color: #fff;
 }

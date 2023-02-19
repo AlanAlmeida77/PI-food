@@ -3,12 +3,14 @@ import styles from './landing.module.css';
 import logoImg from '../../img/logo.png';
 
 function LandingPage() {
-  const [showAnimation, setShowAnimation] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(true);
+  const [showSecondMessage, setShowSecondMessage] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowAnimation(true);
-    }, 2000);
+      setShowAnimation(false);
+      setShowSecondMessage(true);
+    }, 3000);
 
     return () => {
       clearTimeout(timer);
@@ -17,15 +19,25 @@ function LandingPage() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Henry Food App!</h1>
-      <img src={logoImg} alt="Logo" className={styles.logo} />
+      <div className={styles.animationContainer}>
+        <div className={styles.animationContent}>
+          {showAnimation && (
+            <span className={styles.welcome}>
+              Welcome to my individual project!
+            </span>
+          )}
+          {showSecondMessage && (
+            <span className={styles.welcome}>
+              Click on Get in!
+            </span>
+          )}
+        </div>
+      </div>
+      <div className={styles.logoContainer}>
+        <img src={logoImg} alt="Logo" className={styles.logo} />
+      </div>
       <div className={styles.buttonContainer}>
         <button className={styles.button}>Get in</button>
-        {showAnimation && (
-          <span className={styles.welcome}>
-            Welcome to my project, let's get started!
-          </span>
-        )}
       </div>
     </div>
   );
