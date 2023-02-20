@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import styles from './landing.module.css';
 import logoImg from '../../img/logo.png';
+import { useHistory } from 'react-router-dom';
 
 function LandingPage() {
+  const history = useHistory();
   const [showAnimation, setShowAnimation] = useState(true);
   const [showSecondMessage, setShowSecondMessage] = useState(false);
+  const handleGetInClick = () => {
+    history.push('/home');
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -37,7 +42,7 @@ function LandingPage() {
         <img src={logoImg} alt="Logo" className={styles.logo} />
       </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.button}>Get in</button>
+        <button className={styles.button} onClick={handleGetInClick}>Get in</button>
       </div>
     </div>
   );
