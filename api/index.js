@@ -19,6 +19,12 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+const express = require('express');
+const app = express();
+const addApiKeyToRequests = require('./middleware.js');
+
+// Añadir el middleware
+addApiKeyToRequests(app);
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {

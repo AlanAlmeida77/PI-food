@@ -51,3 +51,11 @@
 .searchInput button:hover {
   background-color: #ffcc5c;
 }
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}

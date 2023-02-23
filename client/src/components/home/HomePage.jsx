@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './homePage.module.css';
+import Cards from '../cards/Cards';
 
 function HomePage() {
   return (
@@ -11,6 +12,9 @@ function HomePage() {
             <button type="submit">Search</button>
           </div>
         </div>
+      </div>
+      <div className={styles.cardContainer}>
+        <Cards />
       </div>
     </div>
   );
